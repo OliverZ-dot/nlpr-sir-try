@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fafafa;
+  --foreground: #18181b;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #7c3aed40;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #71717a;
+  border-radius: 999px;
+}
+
+.bg-grid {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(124, 58, 237, 0.16), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(14, 165, 233, 0.1), transparent 45%);
+}
+
+.dark .bg-grid {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(124, 58, 237, 0.22), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(14, 165, 233, 0.12), transparent 45%);
+}
+
+.md {
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.md > * + * {
+  margin-top: 1rem;
+}
+
+.md h2,
+.md h3 {
+  margin-top: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.md h2 {
+  font-size: 1.45rem;
+}
+
+.md h3 {
+  font-size: 1.15rem;
+}
+
+.md a {
+  color: #7c3aed;
+  text-underline-offset: 3px;
+}
+
+.dark .md a {
+  color: #c4b5fd;
+}
+
+.md img {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgb(228 228 231);
+}
+
+.dark .md img {
+  border-color: rgb(39 39 42);
+}
+
+.md ul,
+.md ol {
+  padding-left: 1.25rem;
+}
+
+.md ul {
+  list-style: disc;
+}
+
+.md ol {
+  list-style: decimal;
+}
+
+.md table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.md th,
+.md td {
+  border: 1px solid rgb(228 228 231);
+  padding: 0.45rem 0.65rem;
+  vertical-align: top;
+}
+
+.dark .md th,
+.dark .md td {
+  border-color: rgb(63 63 70);
+}
+
+.md blockquote {
+  border-left: 3px solid #7c3aed;
+  padding-left: 1rem;
+  color: rgb(82 82 91);
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
