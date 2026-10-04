@@ -21,4 +21,4 @@ cd web
 npm run build
 ```
 
-The static site is written to `web/out`. GitHub Actions publishes it to GitHub Pages at https://oliverz-dot.github.io/nlpr-sir-try/.
+The static site is written to `web/out`. The public copy is built with `GITHUB_PAGES=true` and published from the `gh-pages` branch at https://oliverz-dot.github.io/nlpr-sir-try/.
